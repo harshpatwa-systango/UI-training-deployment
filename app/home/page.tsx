@@ -417,6 +417,10 @@
 // export { HomePage, WeatherPage, LocationPage };
 // export default App;
 import React from 'react'
+// app/__tests__/FailDemo.test.tsx
+// test("This test should fail", () => {
+//   expect(1 + 1).toBe(3); // ❌ WRONG ON PURPOSE
+// });
 
 const Page = () => {
   return (
