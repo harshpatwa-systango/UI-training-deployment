@@ -1,0 +1,14 @@
+module.exports = {
+  preset: "ts-jest",
+  testEnvironment: "jsdom",
+  testEnvironmentOptions: {
+    customExportConditions: ["react-server", "default"]
+  },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/$1"
+  },
+  transform: {
+    "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+  }
+};
