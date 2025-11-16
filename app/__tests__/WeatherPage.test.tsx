@@ -1,25 +1,26 @@
-"use client"
 import { render, screen, fireEvent } from "@testing-library/react";
-import { WeatherPage } from "@/app/home/page";
+import "@testing-library/jest-dom";
+import React from "react";
+import { WeatherPage } from "@/app/components/GeoApp";
 
 describe("WeatherPage", () => {
-  it("renders current weather heading", () => {
+  it("renders the default city", () => {
     render(<WeatherPage />);
-    expect(
-      screen.getByText("Real-Time Weather (Mock Data)")
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Enter city name...")).toHaveValue(
+      "New York City"
+    );
   });
 
-  it("updates city name when searching", () => {
+  it("updates weather location when searching", () => {
     render(<WeatherPage />);
 
-    const input = screen.getByLabelText("Search for city weather");
-    fireEvent.change(input, { target: { value: "Mumbai" } });
+    const input = screen.getByPlaceholderText("Enter city name...");
+    fireEvent.change(input, { target: { value: "London" } });
 
-    fireEvent.click(screen.getByText(/search/i));
+    fireEvent.click(screen.getByText(/Search/i));
 
     expect(
-      screen.getByText("Current Conditions in Mumbai")
+      screen.getByText(/Current Conditions in London/)
     ).toBeInTheDocument();
   });
 });
