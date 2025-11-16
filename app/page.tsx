@@ -1,4 +1,3 @@
-"use client"
 import App from "./home/page";
 
 export const metadata = {
