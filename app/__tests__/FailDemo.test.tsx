@@ -1,3 +1,3 @@
 test("This test should fail", () => {
-  expect(1 + 1).toBe(3); // ❌ WRONG ON PURPOSE
+  expect(1 + 1).toBe(34); // ❌ WRONG ON PURPOSE
 });
