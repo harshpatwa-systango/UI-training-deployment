@@ -22,9 +22,10 @@ export const mockWeather = {
   ],
 };
 
+
 export const mockLocations = [
   {
-    name: "Mount Fuji",
+    name: "Mount Fujir",
     coordinates: "35.3606° N, 138.7278° E",
     elevation: "3,776 m",
   },
